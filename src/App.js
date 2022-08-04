@@ -1,53 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
-import Navbar from './Components/Navbar';
 import {
   BrowserRouter as Router,
   Routes,
   Route,
 } from 'react-router-dom';
-import User_Details from './Components/User_Details';
-import Users from './Components/User';
-// import RecentUpload from './Components/RecentUpload';
-import Index from './Components/RecentUpload';
-import Images from './Components/Images';
-import Settings from './Components/Settings';
-import Videos from './Components/Videos'
-import Login from './Components/Login';
-
+import Navbar from './Components/Navbar';
+import Dashboard from './Components/Dashboard';
+import Product from './Components/Product';
 function App() {
+
+  
+
   return (
-    <div className="flex bg-[#F7F8Fc]">
-      <div className='  bg-[#363740]'><Navbar /></div>
-      <div className='m-auto '>
-        <Router>
-          <Routes>
-            <Route exact path='/' element={<Users />} />
-            <Route exact path='/images' element={<Images />} />
-             <Route exact path='/Videos' element={<Videos />} />
-             <Route exact path='/setting' element={<Settings />} />
-             <Route exact path='/User_details' element={<User_Details />} />
-          </Routes>
-        </Router>
+    <>
+    <div className='flex space-x-6'>
+<Navbar/>
+     
+          <Router>
+            <Routes>
+              <Route exact path='/Dashboard' element={<Dashboard/>} />
+              <Route exact path='/Products' element={<Product/>} />
+            </Routes>
+          </Router>
+
       </div>
-    
-          
-         
-         
-
-
-
-
-      {/* <Router>
-        <Routes>
-          <Login/>
-
-        </Routes>
-      </Router> */}
-
-
-
-    </div>
+      
+    </>
   );
 }
 
